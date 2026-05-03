@@ -8,16 +8,21 @@ export default function Constellation({ children }: { children: ReactNode }) {
   useEffect(() => {
     let rotation = 0;
 
+    const apply = () => {
+      if (!ref.current) return;
+      ref.current.style.transform = `rotate(${rotation}deg)`;
+      ref.current.style.setProperty("--rot", `${rotation}deg`);
+    };
+
     const onWheel = (e: WheelEvent) => {
       try {
         if (e.cancelable) e.preventDefault();
       } catch {}
       rotation += e.deltaY * 0.25;
-      if (ref.current) {
-        ref.current.style.transform = `rotate(${rotation}deg)`;
-      }
+      apply();
     };
 
+    apply();
     document.addEventListener("wheel", onWheel, { passive: false });
     return () => document.removeEventListener("wheel", onWheel);
   }, []);

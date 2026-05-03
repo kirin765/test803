@@ -17,7 +17,8 @@ export default function Thumb({ className = "", variant }: ThumbProps) {
   return (
     <div className={`absolute ${className}`}>
       <div
-        className="relative size-full overflow-hidden rounded-full shadow-[0_30px_60px_-25px_rgba(0,0,0,0.25)] ring-1 ring-black/[0.04]"
+        className="relative size-full overflow-hidden rounded-full shadow-[0_30px_60px_-25px_rgba(0,0,0,0.25)] ring-1 ring-black/[0.04] transition-transform duration-200 ease-out"
+        style={{ transform: "rotate(calc(var(--rot, 0deg) * -1))" }}
       >
         {variant === "poster-green" && <PosterGreen />}
         {variant === "tablet" && <Tablet />}
