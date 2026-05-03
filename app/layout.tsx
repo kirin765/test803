@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,10 +7,16 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const serif = Instrument_Serif({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 export const metadata: Metadata = {
-  title: "Offmenu — AI-native studio",
+  title: "O/M — AI-native studio",
   description:
-    "An AI-native studio building brands and web experiences for high-growth startups.",
+    "AI-native studio crafting brand systems and web experiences for ambitious startups.",
 };
 
 export default function RootLayout({
@@ -21,9 +27,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} h-full antialiased`}
+      className={`${inter.variable} ${serif.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#f5f3ee] text-neutral-900 font-sans">
+      <body className="min-h-full bg-white text-neutral-900 font-sans overflow-hidden">
         {children}
       </body>
     </html>

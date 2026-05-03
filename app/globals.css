@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f5f3ee;
-  --foreground: #111111;
+  --background: #ffffff;
+  --foreground: #0a0a0a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif), ui-serif, Georgia, serif;
 }
 
 html,
@@ -17,17 +18,33 @@ body {
   color: var(--foreground);
 }
 
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
+@keyframes float-y {
+  0%, 100% {
     transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
   }
 }
 
-.animate-fade-up {
-  animation: fade-up 500ms ease-out both;
+@keyframes float-y-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
 }
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.float-a { animation: float-y 6s ease-in-out infinite; }
+.float-b { animation: float-y-slow 8s ease-in-out infinite; }
+.float-c { animation: float-y 7s ease-in-out infinite; animation-delay: -2s; }
+.float-d { animation: float-y-slow 9s ease-in-out infinite; animation-delay: -3s; }
+
+.spin-slow { animation: spin-slow 12s linear infinite; }
