@@ -13,22 +13,11 @@ type ThumbProps = {
   variant: Variant;
 };
 
-const SHAPE: Record<Variant, string> = {
-  "poster-green": "rounded-[22%]",
-  tablet: "rounded-[24%]",
-  "laptop-photo": "rounded-[20%]",
-  "phone-dark": "rounded-full",
-  "monitor-code": "rounded-[26%]",
-  "laptop-grass": "rounded-full",
-  print: "rounded-[18%]",
-  imac: "rounded-[22%]",
-};
-
 export default function Thumb({ className = "", variant }: ThumbProps) {
   return (
     <div className={`absolute ${className}`}>
       <div
-        className={`relative size-full overflow-hidden ${SHAPE[variant]} shadow-[0_30px_60px_-25px_rgba(0,0,0,0.25)] ring-1 ring-black/[0.04]`}
+        className="relative size-full overflow-hidden rounded-full shadow-[0_30px_60px_-25px_rgba(0,0,0,0.25)] ring-1 ring-black/[0.04]"
       >
         {variant === "poster-green" && <PosterGreen />}
         {variant === "tablet" && <Tablet />}

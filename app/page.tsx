@@ -1,4 +1,5 @@
 import Thumb from "./components/Thumb";
+import Constellation from "./components/Constellation";
 
 export default function Home() {
   return (
@@ -29,17 +30,19 @@ export default function Home() {
         </p>
       </main>
 
-      <Thumb variant="poster-green" className="top-[12%] left-[34%] size-[140px] lg:size-[170px] float-a" />
-      <Thumb variant="tablet" className="top-[8%] left-[50%] size-[120px] lg:size-[150px] float-b" />
-      <Thumb variant="laptop-photo" className="top-[28%] left-[18%] size-[200px] lg:size-[260px] float-c" />
-      <Thumb variant="phone-dark" className="top-[30%] left-[63%] size-[150px] lg:size-[190px] float-d" />
-      <Thumb variant="monitor-code" className="top-[63%] left-[28%] size-[150px] lg:size-[180px] float-b" />
-      <Thumb variant="laptop-grass" className="top-[58%] left-[60%] size-[170px] lg:size-[210px] float-a" />
-      <Thumb variant="print" className="bottom-[8%] left-[42%] size-[150px] lg:size-[180px] float-d" />
-      <Thumb variant="imac" className="bottom-[6%] left-[58%] size-[160px] lg:size-[200px] float-c" />
+      <Constellation>
+        <Thumb variant="poster-green" className="top-[12%] left-[34%] size-[140px] lg:size-[170px] float-a" />
+        <Thumb variant="tablet" className="top-[8%] left-[50%] size-[120px] lg:size-[150px] float-b" />
+        <Thumb variant="laptop-photo" className="top-[28%] left-[18%] size-[200px] lg:size-[260px] float-c" />
+        <Thumb variant="phone-dark" className="top-[30%] left-[63%] size-[150px] lg:size-[190px] float-d" />
+        <Thumb variant="monitor-code" className="top-[63%] left-[28%] size-[150px] lg:size-[180px] float-b" />
+        <Thumb variant="laptop-grass" className="top-[58%] left-[60%] size-[170px] lg:size-[210px] float-a" />
+        <Thumb variant="print" className="bottom-[8%] left-[42%] size-[150px] lg:size-[180px] float-d" />
+        <Thumb variant="imac" className="bottom-[6%] left-[58%] size-[160px] lg:size-[200px] float-c" />
 
-      <span className="absolute top-[28%] left-[57%] size-1.5 rounded-full bg-neutral-900 z-10" />
-      <span className="absolute top-[44%] left-[28%] size-1 rounded-full bg-neutral-900 z-10" />
+        <span className="absolute top-[28%] left-[57%] size-1.5 rounded-full bg-neutral-900" />
+        <span className="absolute top-[44%] left-[28%] size-1 rounded-full bg-neutral-900" />
+      </Constellation>
 
       <a
         href="#contact"
